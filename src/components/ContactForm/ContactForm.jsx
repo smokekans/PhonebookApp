@@ -89,7 +89,6 @@ export const ContactForm = () => {
           size="small"
           name="number"
           label="Number"
-          type="number"
           id="number"
           value={formik.values.number}
           onChange={formik.handleChange}
