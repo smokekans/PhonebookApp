@@ -1,8 +1,8 @@
-import { List } from './ContactList.styled';
+import { List } from '@mui/material';
 import ContactItem from 'components/ContactItem/ContactItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContact } from 'redux/contactsSelectors';
-import { fetchContacts } from 'redux/contactsThunk';
+import { getContact } from 'redux/contacts/contactsSelectors';
+import { fetchContacts } from 'redux/contacts/contactsThunks';
 import { useEffect } from 'react';
 
 export const ContactList = () => {
@@ -14,7 +14,7 @@ export const ContactList = () => {
   }, [dispatch]);
 
   return (
-    <List>
+    <List sx={{ width: 1 }}>
       {contacts.map(({ id, name, number }) => (
         <ContactItem key={id} id={id} name={name} number={number} />
       ))}

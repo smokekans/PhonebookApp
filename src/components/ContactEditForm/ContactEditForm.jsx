@@ -1,10 +1,10 @@
 import * as yup from 'yup';
 import { useFormik } from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contacts/contactsThunks';
-import { getContacts } from 'redux/contacts/contactsSelectors';
-import Button from '@mui/material/Button';
-import { Box, TextField } from '@mui/material';
+
+import { Box, Fab, TextField } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { upDateContact } from 'redux/contacts/contactsThunks';
+import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 
 const schema = yup.object().shape({
   name: yup
@@ -13,44 +13,23 @@ const schema = yup.object().shape({
       /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
       "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
     )
-    .required('Name is required'),
+    .required(),
   number: yup
     .string()
     .matches(
       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
       'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
     )
-    .required('Number is required')
-    .min(5, 'Number should be of minimum 7 characters length'),
+    .required(),
 });
 
-const initialValues = {
-  name: '',
-  number: '',
-};
-
-export const ContactForm = () => {
+export const ContactEditForm = ({ id, initialValues, onSubmit }) => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
-
-  const checkIsInContacts = newName =>
-    contacts.find(
-      ({ name }) => name.toLowerCase() === newName.toLowerCase().trim()
-    );
 
   const handleSubmit = (values, { resetForm }) => {
-    const { name } = values;
-
-    const isInContacts = checkIsInContacts(name);
-
-    if (isInContacts) {
-      alert(`"${name} exist in contact list"`);
-      resetForm();
-      return;
-    }
-
-    dispatch(addContact(values));
+    dispatch(upDateContact({ id, ...values }));
     resetForm();
+    onSubmit();
   };
 
   const formik = useFormik({
@@ -60,18 +39,27 @@ export const ContactForm = () => {
   });
 
   return (
-    <>
+    <Box
+      component="form"
+      onSubmit={formik.handleSubmit}
+      sx={{
+        mt: 1,
+        textAlign: 'center',
+
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
       <Box
-        component="form"
-        onSubmit={formik.handleSubmit}
         sx={{
-          mt: 1,
-          textAlign: 'center',
+          mr: 2,
+          maxWidth: 305,
         }}
       >
         <TextField
-          margin="normal"
           fullWidth
+          required
+          variant="standard"
           size="small"
           id="name"
           label="Name"
@@ -79,28 +67,32 @@ export const ContactForm = () => {
           value={formik.values.name}
           onChange={formik.handleChange}
           error={formik.touched.name && Boolean(formik.errors.name)}
-          helperText={formik.touched.name && formik.errors.name}
           autoComplete="name"
           autoFocus
         />
         <TextField
-          margin="normal"
           fullWidth
+          required
+          variant="standard"
           size="small"
           name="number"
           label="Number"
-          type="number"
           id="number"
           value={formik.values.number}
           onChange={formik.handleChange}
           error={formik.touched.number && Boolean(formik.errors.number)}
-          helperText={formik.touched.number && formik.errors.number}
           autoComplete="current-number"
         />
-        <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2, px: 3 }}>
-          + Add contact
-        </Button>
       </Box>
-    </>
+      <Fab
+        type="submit"
+        aria-label="submit"
+        color="success"
+        size="small"
+        sx={{ mr: 2, zIndex: 'auto', minWidth: '40px' }}
+      >
+        <CheckOutlinedIcon />
+      </Fab>
+    </Box>
   );
 };
