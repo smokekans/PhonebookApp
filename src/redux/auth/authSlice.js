@@ -30,6 +30,7 @@ const authSlice = createSlice({
       state.isLoggerIn = true;
       state.error = null;
     },
+
     [logIn.rejected]: (state, { payload }) => {
       state.error = `${payload}`;
     },
