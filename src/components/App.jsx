@@ -3,7 +3,6 @@ import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { fetchCurrentUser } from 'redux/auth/authThunks';
-// import { Navigation } from './Navigation/Navigation';
 import { PrivateRouters } from './PrivateRouters';
 import { PublicRouters } from './PublicRouters';
 import { SharedLayout } from './SharedLayout/SharedLayout';

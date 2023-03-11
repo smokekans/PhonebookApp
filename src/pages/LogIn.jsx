@@ -8,6 +8,7 @@ import { NavLink as RouterLink } from 'react-router-dom';
 
 const LogIn = () => {
   const error = useSelector(getAuthError);
+
   return (
     <>
       <Grid container component="main" sx={{ height: '95vh', pt: 6 }}>
