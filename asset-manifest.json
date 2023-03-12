@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.a3ac7762.js",
-    "static/js/617.f9edd98c.chunk.js": "/goit-react-hw-08-phonebook/static/js/617.f9edd98c.chunk.js",
-    "static/js/116.75b9acfb.chunk.js": "/goit-react-hw-08-phonebook/static/js/116.75b9acfb.chunk.js",
-    "static/js/735.5c925060.chunk.js": "/goit-react-hw-08-phonebook/static/js/735.5c925060.chunk.js",
-    "static/js/733.0254fdc7.chunk.js": "/goit-react-hw-08-phonebook/static/js/733.0254fdc7.chunk.js",
-    "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.a3ac7762.js.map": "/goit-react-hw-08-phonebook/static/js/main.a3ac7762.js.map",
-    "617.f9edd98c.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/617.f9edd98c.chunk.js.map",
-    "116.75b9acfb.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/116.75b9acfb.chunk.js.map",
-    "735.5c925060.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/735.5c925060.chunk.js.map",
-    "733.0254fdc7.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/733.0254fdc7.chunk.js.map"
+    "main.js": "/PhonebookApp/static/js/main.946a6bc3.js",
+    "static/js/617.cae3b7d9.chunk.js": "/PhonebookApp/static/js/617.cae3b7d9.chunk.js",
+    "static/js/116.cae245bb.chunk.js": "/PhonebookApp/static/js/116.cae245bb.chunk.js",
+    "static/js/735.08626fae.chunk.js": "/PhonebookApp/static/js/735.08626fae.chunk.js",
+    "static/js/733.a9a3f74d.chunk.js": "/PhonebookApp/static/js/733.a9a3f74d.chunk.js",
+    "index.html": "/PhonebookApp/index.html",
+    "main.946a6bc3.js.map": "/PhonebookApp/static/js/main.946a6bc3.js.map",
+    "617.cae3b7d9.chunk.js.map": "/PhonebookApp/static/js/617.cae3b7d9.chunk.js.map",
+    "116.cae245bb.chunk.js.map": "/PhonebookApp/static/js/116.cae245bb.chunk.js.map",
+    "735.08626fae.chunk.js.map": "/PhonebookApp/static/js/735.08626fae.chunk.js.map",
+    "733.a9a3f74d.chunk.js.map": "/PhonebookApp/static/js/733.a9a3f74d.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a3ac7762.js"
+    "static/js/main.946a6bc3.js"
   ]
 }
