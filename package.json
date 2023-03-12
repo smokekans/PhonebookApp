@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-08-phonebook",
+  "name": "PhonebookApp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://smokekans.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://smokekans.github.io/PhonebookApp/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
